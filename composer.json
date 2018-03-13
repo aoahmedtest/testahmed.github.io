@@ -1,0 +1,18 @@
+{
+	"require" : {
+		"silex/silex" : "^2.0",
+		"twig/twig" : "^1.33",
+        "doctrine/dbal": "~2.2"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Model\\" : "model"
+		}
+	},
+     "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    },
+	"name" : "Appli agence de voyage IMT 2017"
+}

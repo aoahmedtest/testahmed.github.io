@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="load-full-screen">
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="LimpidThemes">
+
+	<title>IMT Travel Agency</title>
+
+    <!-- STYLES -->
+	<link href="assets/css/animate.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="assets/css/owl.carousel.css" rel="stylesheet">
+	<link href="assets/css/owl-carousel-theme.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/flexslider.css" rel="stylesheet" media="screen">
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+	<!-- LIGHT -->
+	<link rel="stylesheet" type="text/css" href="assets/css/dummy.html" id="select-style">
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="assets/css/light.css" rel="stylesheet" media="screen">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="load-full-screen">
+
+<!-- BEGIN: PRELOADER -->
+<div id="loader" class="load-full-screen">
+	<div class="loading-animation">
+		<span><i class="fa fa-plane"></i></span>
+		<span><i class="fa fa-bed"></i></span>
+		<span><i class="fa fa-ship"></i></span>
+		<span><i class="fa fa-suitcase"></i></span>
+	</div>
+</div>
+<!-- END: PRELOADER -->
+
+
+
+<!-- BEGIN: SITE-WRAPPER -->
+<div class="site-wrapper">
+	<div class="row transparent-menu-top">
+		<div class="container clear-padding">
+			<div class="navbar-contact">
+				<div class="col-md-7 col-sm-6 clear-padding">
+					<a href="#" class="transition-effect"><i class="fa fa-phone"></i> (+33) 1234567890</a>
+					<a href="#" class="transition-effect"><i class="fa fa-envelope-o"></i> support@travel-sudparis.eu</a>
+				</div>
+				<div class="col-md-5 col-sm-6 clear-padding search-box">
+					<div class="col-md-6 col-xs-5 clear-padding">
+						<form >
+							<div class="input-group">
+								<input type="text" name="search" class="form-control" required placeholder="Search">
+								<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="row transparent-menu">
+		<div class="container clear-padding">
+			<!-- BEGIN: HEADER -->
+			<div class="navbar-wrapper">
+				<div class="navbar navbar-default" role="navigation">
+					<!-- BEGIN: NAV-CONTAINER -->
+					<div class="nav-container">
+						<div class="navbar-header">
+							<!-- BEGIN: TOGGLE BUTTON (RESPONSIVE)-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+
+						</div>
+
+						<!-- BEGIN: NAVIGATION -->
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li >
+									<a href="/"><i class="fa fa-home"></i> HOME </a>
+								</li>
+								<li >
+									<a  href="#"><i class="fa fa-list-alt"></i> PROGRAMS </a>
+								</li>
+								<li class="dropdown mega">
+									<a class="dropdown-toggle" href="/circuit" data-toggle="dropdown"><i class="fa fa-suitcase"></i> TOURS <i class="fa fa-caret-down"></i></a>
+									<ul class="dropdown-menu mega-menu" >
+										<li class="col-md-9 col-sm-11 links">
+											<h5>CIRCUITS</h5>
+											<ul>
+												<li><a href="/circuit">All circuits</a></li>
+												{% for circuit in circuitslist %}
+												<li><a href={{"/circuitid="~ circuit.id }}>{{ circuit.description }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										<li class="col-md-3 col-sm-4 links">
+											<div class="img-div clear-top">
+												<img src="assets/images/tour1.jpg" alt="cruise">
+												<div class="overlay">
+													<h5>PARIS</h5>
+													<p>Starting From $599</p>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</li>
+							</ul>
+						</div>
+						<!-- END: NAVIGATION -->
+					</div>
+					<!--END: NAV-CONTAINER -->
+				</div>
+			</div>
+			<!-- END: HEADER -->
+		</div>
+	</div>
+	<!-- BEGIN: SEARCH SECTION -->
+
+	<div class="row full-width-search">
+		<div class="container clear-padding">
+			<div class="col-md-8 search-section tran-search-box">
+				<div role="tabpanel">
+					<!-- BEGIN: CATEGORY TAB -->
+					<ul class="nav nav-tabs search-top" role="tablist" id="searchTab">
+						<li role="presentation" class="text-center active">
+							<a href="#cruise" aria-controls="cruise" role="tab" data-toggle="tab">
+								<i class="fa fa-ship"></i>
+								<span>CIRCUITS</span>
+							</a>
+						</li>
+					</ul>
+					<!-- END: CATEGORY TAB -->
+
+					<!-- BEGIN: TAB PANELS -->
+					<div class="tab-content">
+
+							<!-- START: TOUR SEARCH -->
+							<div role="tabpanel" class="tab-pane active" id="cruise">
+								<form >
+									<div class="col-md-12 product-search-title">Plan And Book</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>From</label>
+										<div class="input-group">
+											<input type="text" name="pack-departure-city" class="form-control" required placeholder="E.g. New York">
+											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>I Want To Go</label>
+										<div class="input-group">
+											<input type="text" name="pack-destination-city" class="form-control" required placeholder="E.g. New York">
+											<span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>Starting From</label>
+										<div class="input-group">
+											<input type="text" id="cruise_start" class="form-control" placeholder="DD/MM/YYYY">
+											<span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>Duration(Optional)</label><br>
+										<select class="selectpicker" name="holiday_duration">
+											<option>3 Days</option>
+											<option>5 Days</option>
+											<option>1 Week</option>
+											<option>2 Weeks</option>
+											<option>1 Month</option>
+											<option>1+ Month</option>
+										</select>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>Package Type(Optional)</label><br>
+										<select class="selectpicker" name="package_type">
+											<option>Group</option>
+											<option>Family</option>
+											<option>Individual</option>
+											<option>Honeymoon</option>
+										</select>
+									</div>
+									<div class="col-md-6 col-sm-6 search-col-padding">
+										<label>Budget(Optional)</label><br>
+										<select class="selectpicker" name="package_budget">
+											<option>500</option>
+											<option>1000</option>
+											<option>1000+</option>
+										</select>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 search-col-padding">
+										<button type="submit" class="search-button btn transition-effect">Search Cruises</button>
+									</div>
+									<div class="clearfix"></div>
+								</form>
+							</div>
+							<!-- END: CRUISE SEARCH -->
+
+						</div>
+						<!-- END: TAB PANE -->
+				</div>
+			</div>
+			<div class="offer-slider">
+				<div class="owl-carousel col-md-4 text-right" id="offer1">
+					{% for circuit in circuitslist %}
+					{%  for programmation in circuit.programmations %}
+					<div class="item">
+						<h3>{{ circuit.description }}</h3>
+						<h4>Starting From ${{programmation.prix}}/Person</h4>
+						<a href={{"/circuitid="~circuit.id}}>KNOW MORE</a>
+					</div>
+					{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END: SEARCH SECTION -->
+
+<!-- BEGIN: HOW IT WORK -->
+<section id="how-it-work">
+		<div class="row work-row">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>HOW IT WORKS?</h2>
+					<h4>SEARCH - SELECT - BOOK</h4>
+				<div class="work-step">
+					<div class="col-md-4 col-sm-4 first-step text-center">
+						<i class="fa fa-search"></i>
+						<h5>SEARCH</h5>
+
+					</div>
+					<div class="col-md-4 col-sm-4 second-step text-center">
+						<i class="fa fa-heart-o"></i>
+						<h5>SELECT</h5>
+
+					</div>
+					<div class="col-md-4 col-sm-4 third-step text-center">
+						<i class="fa fa-shopping-cart"></i>
+						<h5>BOOK</h5>
+
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+<!--END: HOW IT WORK -->
+
+
+<!-- BEGIN: TOP DESTINATION SECTION -->
+<section id="home-top-destination">
+	<div class="row image-background">
+		<div class="td-overlay">
+			<div class="container">
+				<div class="light-section-title text-center">
+					<h2>TOP DESTINATION</h2>
+					<h4>EXPLORE</h4>
+					<div class="space"></div>
+					<p>
+						Explore the immemorial beauty of world's spots by joining one of our best tours.
+					</p>
+				</div>
+				<div class="col-md-10 col-md-offset-1 on-top clear-padding">
+					<div class="col-md-6 col-sm-6 td-product text-center clear-padding wow slideInUp" data-wow-delay="0.1s">
+						<img src="assets/images/tour1.jpg" alt="cruise">
+						<div class="overlay">
+							<div class="wrapper">
+								<h5>FRANCE</h5>
+								<h3><span>ROMANTIC PARIS</span></h3>
+								<p>Paris, the world's most popular city destination, has plenty of must-see places to discover the real charm of Paris.</p>
+								<a href="/circuitid=3">KNOW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 td-product text-center clear-padding wow slideInUp" data-wow-delay="0.2s">
+						<img src="assets/images/tour2.jpg" alt="cruise">
+						<div class="overlay">
+							<div class="wrapper">
+								<h5>VIETNAM</h5>
+								<h3><span>Vietnam Highlights</span></h3>
+								<p>Whether you‘re looking for stunning beaches, scenic world great natural wonder and cultural heritage, you‘re surely find it in Vietnam a vibrant Asian country. </p>
+								<a href="/circuitid=2">KNOW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix visible-md-block"></div>
+					<div class="col-md-6 col-sm-6 td-product text-center clear-padding wow slideInUp" data-wow-delay="0.1s">
+						<img src="assets/images/tour3.jpg" alt="cruise">
+						<div class="overlay">
+							<div class="wrapper">
+								<h5>SPAIN</h5>
+								<h3><span>Andalusia</span></h3>
+								<p>Andalusia is one of the sunniest and warmest places in Europe, making it a center of "sun and sand" tourism.</p>
+								<a href="/circuitid=1">KNOW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 td-product text-center clear-padding wow slideInUp" data-wow-delay="0.2s">
+						<img src="assets/images/tour4.jpg" alt="cruise">
+						<div class="overlay">
+							<div class="wrapper">
+								<h5>ITALY</h5>
+								<h3><span>Riding holidays Italy</span></h3>
+								<p>We welcome horseback riding lovers looking for a pleasant vacation in Tuscany!</p>
+								<a href="/circuitid=4">KNOW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix visible-md-block"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END: TOP DESTINATION SECTION -->
+
+
+
+<!-- START: WHY CHOOSE US SECTION -->
+<section id="why-choose-us">
+	<div class="row choose-us-row">
+		<div class="container clear-padding">
+			<div class="light-section-title text-center">
+				<h2>WHY CHOOSE US?</h2>
+                <h4>REASONS TO TRUST US</h4>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInLeft">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-suitcase"></i></div>
+					<h4>Handpicked Tour</h4>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInUp">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-phone"></i></div>
+					<h4>Dedicated Support</h4>
+
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 wow slideInRight">
+				<div class="choose-us-item text-center">
+					<div class="choose-icon"><i class="fa fa-smile-o"></i></div>
+					<h4>Lowest Price</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- END: WHY CHOOSE US SECTION -->
+
+
+<!-- START: FOOTER -->
+<section id="footer">
+	<footer>
+
+		<div class="main-footer row">
+			<div class="container clear-padding">
+				<div class="col-md-4 col-sm-8 about-box">
+					<h3>IMT Travel Agency</h3>
+					<p>Best Travel Agency in The World.</p>
+				</div>
+				<div class="col-md-4 col-sm-8 links">
+					<h4>Popular Tours</h4>
+					<ul>
+						<li><a href="#">Romantic France</a></li>
+						<li><a href="#">Wonderful Lodnon</a></li>
+						<li><a href="#">Awesome Amsterdam</a></li>
+						<li><a href="#">Wild Africa</a></li>
+						<li><a href="#">Beach Goa</a></li>
+						<li><a href="#">Casino Los Vages</a></li>
+						<li><a href="#">Romantic France</a></li>
+					</ul>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-4 col-sm-8 contact-box">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home"></i> Street #9 CHARLES FOURIER 91011 EVRY FRANCE CEDEX</p>
+					<p><i class="fa fa-phone"></i> +(33) 1234567890</p>
+					<p><i class="fa fa-envelope-o"></i> support@travel-sudparis.eu</p>
+				</div>
+				<div class="clearfix"></div>
+				<div class="col-md-12 text-center we-accept">
+					<h4>We Accept</h4>
+					<ul>
+						<li><img src="assets/images/card/mastercard.png" alt="cruise"></li>
+						<li><img src="assets/images/card/visa.png" alt="cruise"></li>
+						<li><img src="assets/images/card/american-express.png" alt="cruise"></li>
+						<li><img src="assets/images/card/mastercard.png" alt="cruise"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-footer-nav row">
+			<div class="container clear-padding">
+				<div class="col-md-6 col-sm-6">
+					<p>Copyright &copy; 2017 . All Rights Reserved.</p>
+				</div>
+
+				<div class="go-up">
+					<a href="#"><i class="fa fa-arrow-up"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</section>
+<!-- END: FOOTER -->
+</div>
+<!-- END: SITE-WRAPPER -->
+<!-- Load Scripts -->
+<script src="assets/js/respond.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/plugins/owl.carousel.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/plugins/wow.min.js"></script>
+<script type="text/javascript" src="assets/plugins/supersized.3.1.3.min.js"></script>
+<script src="assets/js/js.js"></script>
+<script type="text/javascript">
+			/* SLIDER SETTINGS */
+			jQuery(function($){
+				"use strict";
+				$.supersized({
+
+					//Functionality
+					slideshow               :   1,		//Slideshow on/off
+					autoplay				:	1,		//Slideshow starts playing automatically
+					start_slide             :   1,		//Start slide (0 is random)
+					random					: 	0,		//Randomize slide order (Ignores start slide)
+					slide_interval          :   10000,	//Length between transitions
+					transition              :   1, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	500,	//Speed of transition
+					new_window				:	1,		//Image links open in new window/tab
+					pause_hover             :   0,		//Pause slideshow on hover
+					keyboard_nav            :   0,		//Keyboard navigation on/off
+					performance				:	1,		//0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+					image_protect			:	1,		//Disables image dragging and right click with Javascript
+
+					//Size & Position
+					min_width		        :   0,		//Min width allowed (in pixels)
+					min_height		        :   0,		//Min height allowed (in pixels)
+					vertical_center         :   1,		//Vertically center background
+					horizontal_center       :   1,		//Horizontally center background
+					fit_portrait         	:   1,		//Portrait images will not exceed browser height
+					fit_landscape			:   0,		//Landscape images will not exceed browser width
+
+					//Components
+					navigation              :   1,		//Slideshow controls on/off
+					thumbnail_navigation    :   1,		//Thumbnail navigation
+					slide_counter           :   1,		//Display slide numbers
+					slide_captions          :   1,		//Slide caption (Pull from "title" in slides array)
+					slides 					:  	[		//Slideshow Images
+														{image : 'assets/images/hotel-slide.jpg', title : 'Slide 1'},
+														{image : 'assets/images/holiday-slide3.jpg', title : 'Slide 3'}
+												]
+
+				});
+		    });
+
+</script>
+</body>
+
+</html>

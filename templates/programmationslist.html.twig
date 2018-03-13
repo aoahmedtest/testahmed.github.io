@@ -1,0 +1,22 @@
+{# templates/programmationslist.html.twig #}
+
+{% extends "baselayout.html.twig" %}
+
+{% block title %}{{ parent() }} - programmations list{% endblock %}
+
+{% block body %}
+    <h1>List of programmations</h1>
+    {% if programmationslist is not empty %}
+        <p>Here are all your programmations:</p>
+        <ul>
+        {# Loop through list and creeate the list of programmation items. #}
+        {% for programmation in programmationslist %}
+            <li>
+          		{{ programmation.id }} {{ programmation.circuit.description }} le {{ programmation.dateDepart|date('d-m-Y')  }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Sorry, you don't have any programmations yet!</p>
+    {% endif %}    
+{% endblock %} {# body #}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="load-full-screen">
+
+<head>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="LimpidThemes">
+	
+	<title>IMT Travel Agency</title>
+	
+    <!-- STYLES -->
+	<link href="assets/css/animate.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="assets/css/owl.carousel.css" rel="stylesheet">
+	<link href="assets/css/owl-carousel-theme.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/flexslider.css" rel="stylesheet" media="screen">
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <link href="assets/css/alertify.bootstrap.css" rel="stylesheet">
+	<!-- LIGHT -->
+	<link rel="stylesheet" type="text/css" href="assets/css/dummy.html" id="select-style">
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	
+	<link href="assets/css/light.css" rel="stylesheet" media="screen">
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="load-full-screen">
+
+<!-- BEGIN: PRELOADER -->
+<div id="loader" class="load-full-screen">
+	<div class="loading-animation">
+		<span><i class="fa fa-plane"></i></span>
+		<span><i class="fa fa-bed"></i></span>
+		<span><i class="fa fa-ship"></i></span>
+		<span><i class="fa fa-suitcase"></i></span>
+	</div>
+</div>
+<!-- END: PRELOADER -->
+
+
+
+<!-- BEGIN: SITE-WRAPPER -->
+<div class="site-wrapper">
+	<div class="row transparent-menu-top">
+		<div class="container clear-padding">
+			<div class="navbar-contact">
+				<div class="col-md-7 col-sm-6 clear-padding">
+					<a href="#" class="transition-effect"><i class="fa fa-phone"></i> (+33) 1234567890</a>
+					<a href="#" class="transition-effect"><i class="fa fa-envelope-o"></i> support@travel-sudparis.eu</a>
+				</div>
+				<div class="col-md-5 col-sm-6 clear-padding search-box">
+					<div class="col-md-6 col-xs-5 clear-padding">
+						<form >
+							<div class="input-group">
+								<input type="text" name="search" class="form-control" required placeholder="Search">
+								<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="row transparent-menu">
+		<div class="container clear-padding">
+			<!-- BEGIN: HEADER -->
+			<div class="navbar-wrapper">
+				<div class="navbar navbar-default" role="navigation">
+					<!-- BEGIN: NAV-CONTAINER -->
+					<div class="nav-container">
+						<div class="navbar-header">
+							<!-- BEGIN: TOGGLE BUTTON (RESPONSIVE)-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+
+						</div>
+
+						<!-- BEGIN: NAVIGATION -->
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li >
+									<a href="/"><i class="fa fa-home"></i> HOME </a>
+								</li>
+								<li >
+									<a  href="#"><i class="fa fa-list-alt"></i> PROGRAMS </a>
+								</li>
+								<li class="dropdown mega">
+									<a class="dropdown-toggle" href="/circuit" data-toggle="dropdown"><i class="fa fa-suitcase"></i> TOURS <i class="fa fa-caret-down"></i></a>
+									<ul class="dropdown-menu mega-menu" >
+										<li class="col-md-9 col-sm-11 links">
+											<h5>CIRCUITS</h5>
+											<ul>
+												<li><a href="/circuit">All circuits</a></li>
+												{% for circuit in circuitslist %}
+												<li><a href={{"/circuitid="~ circuit.id }}>{{ circuit.description }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										<li class="col-md-3 col-sm-4 links">
+											<div class="img-div clear-top">
+												<img src="assets/images/tour1.jpg" alt="cruise">
+												<div class="overlay">
+													<h5>PARIS</h5>
+													<p>Starting From $599</p>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</li>
+							</ul>
+						</div>
+						<!-- END: NAVIGATION -->
+					</div>
+					<!--END: NAV-CONTAINER -->
+				</div>
+			</div>
+			<!-- END: HEADER -->
+		</div>
+	</div>
+	<!-- START: PAGE TITLE -->
+	<div class="row page-title">
+		<div class="container clear-padding text-center flight-title">
+			<h3>LOGIN</h3>
+			<h4 class="thank">Manage Your Account</h4>
+		</div>
+	</div>
+	<!-- END: PAGE TITLE -->
+	
+	<!-- START: LOGIN -->
+    <center>
+	<div class="row login-row">
+		<div class="container clear-padding c">
+			<div class="col-md-4 col-md-offset-4 login-form">
+				<h4>Login</h4>
+				<form action="/admin" method="post">
+					<label>Username</label>
+					<div class="input-group">
+						<input name="username" type="text" class="form-control" placeholder="Username" required>
+						<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+					</div>
+					<label>Password</label>
+					<div class="input-group">
+						<input name="password" type="password" class="form-control" placeholder="Password" required>
+						<span class="input-group-addon"><i class="fa fa-eye fa-fw"></i></span>
+					</div>					
+					<button type="submit">LOGIN <i class="fa fa-sign-in"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+        </center>
+	<!-- END: LOGIN -->
+<!-- START: FOOTER -->
+<section id="footer">
+	<footer>
+
+		<div class="main-footer row">
+			<div class="container clear-padding">
+				<div class="col-md-4 col-sm-8 about-box">
+					<h3>IMT Travel Agency</h3>
+					<p>Best Travel Agency in The World.</p>
+				</div>
+				<div class="col-md-4 col-sm-8 links">
+					<h4>Popular Tours</h4>
+					<ul>
+						<li><a href="#">Romantic France</a></li>
+						<li><a href="#">Wonderful Lodnon</a></li>
+						<li><a href="#">Awesome Amsterdam</a></li>
+						<li><a href="#">Wild Africa</a></li>
+						<li><a href="#">Beach Goa</a></li>
+						<li><a href="#">Casino Los Vages</a></li>
+						<li><a href="#">Romantic France</a></li>
+					</ul>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-4 col-sm-8 contact-box">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home"></i> Street #9 CHARLES FOURIER 91011 EVRY FRANCE CEDEX</p>
+					<p><i class="fa fa-phone"></i> +(33) 1234567890</p>
+					<p><i class="fa fa-envelope-o"></i> support@travel-sudparis.eu</p>
+				</div>
+				<div class="clearfix"></div>
+				<div class="col-md-12 text-center we-accept">
+					<h4>We Accept</h4>
+					<ul>
+						<li><img src="assets/images/card/mastercard.png" alt="cruise"></li>
+						<li><img src="assets/images/card/visa.png" alt="cruise"></li>
+						<li><img src="assets/images/card/american-express.png" alt="cruise"></li>
+						<li><img src="assets/images/card/mastercard.png" alt="cruise"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-footer-nav row">
+			<div class="container clear-padding">
+				<div class="col-md-6 col-sm-6">
+					<p>Copyright &copy; 2017 . All Rights Reserved.</p>
+				</div>
+
+				<div class="go-up">
+					<a href="#"><i class="fa fa-arrow-up"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</section>
+<!-- END: FOOTER -->
+
+</div>
+<!-- END: SITE-WRAPPER -->
+
+    
+<!-- Load Scripts -->
+<script src="assets/js/respond.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/plugins/owl.carousel.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/plugins/wow.min.js"></script>
+<script src="assets/plugins/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/js.js"></script>
+<script src="assets/js/alertify.min.js"></script>
+    
+
+</body>
+ {% if falselogin == true %}
+    <script>alert("Wrong login !!");</script>
+    {% endif %}
+</html>
